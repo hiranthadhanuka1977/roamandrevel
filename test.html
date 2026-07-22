@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Promotions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        /* Ensure a smooth transition for colors */
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Swiper Pagination Dots */
+        .swiper-pagination-bullet {
+            background-color: #ffffff !important;
+            opacity: 0.8;
+        }
+
+        .light .swiper-pagination-bullet-active {
+            background-color: #1D4ED8 !important; /* Blue for active in light mode */
+            opacity: 1;
+        }
+
+        .dark .swiper-pagination-bullet {
+             background-color: #9CA3AF !important; /* Gray for inactive in dark mode */
+        }
+
+        .dark .swiper-pagination-bullet-active {
+            background-color: #BFDBFE !important; /* Lighter blue for active in dark mode */
+            opacity: 1;
+        }
+
+        /* Ensure text color in hero section is always visible */
+        .hero-carousel .swiper-slide .text-white {
+            color: #ffffff; /* Keep text white in hero for contrast */
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-gray-100 text-gray-900 bg-gray-900 text-gray-200">
+
+    <button id="theme-toggle" class="fixed top-4 right-4 z-50 p-3 rounded-full bg-gray-800 text-white bg-gray-200 text-gray-800 shadow-lg focus:outline-none transition-colors duration-300">
+        <svg id="theme-toggle-dark-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        <svg id="theme-toggle-light-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+    </button>
+
+    <header class="bg-[#141821] shadow-md py-4 transition-colors duration-300">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/40x40" alt="TravelPromo Logo" class="h-10 w-10 mr-3">
+                <span class="text-2xl font-bold text-gray-800 text-white">TravelPromo</span>
+            </div>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-white hover:text-gray-300 transition-colors duration-300">Home</a></li>
+                    <li><a href="#packages" class="text-white hover:text-gray-300 transition-colors duration-300">Packages</a></li>
+                    <li><a href="#why-us" class="text-white hover:text-gray-300 transition-colors duration-300">Why Us?</a></li>
+                    <li><a href="#about" class="text-white hover:text-gray-300 transition-colors duration-300">About Us</a></li>
+                    <li><a href="#contact" class="text-white hover:text-gray-300 transition-colors duration-300">Contact</a></li>
+                    <li><a href="#testimonials" class="text-white hover:text-gray-300 transition-colors duration-300">Testimonials</a></li>
+                     <li><a href="packages.html" class="text-white hover:text-gray-300 transition-colors duration-300">All Packages</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="relative w-full overflow-hidden">
+        <div class="swiper hero-carousel h-[60vh]">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide relative">
+                    <img src="https://via.placeholder.com/1920x1080" alt="Travel Destination 1" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4">Discover Amazing Places</h1>
+                            <p class="text-lg md:text-xl">Book your next adventure with us</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <img src="https://via.placeholder.com/1920x1080" alt="Travel Destination 2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4">Explore New Horizons</h1>
+                            <p class="text-lg md:text-xl">Unforgettable experiences await</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <img src="https://via.placeholder.com/1920x1080" alt="Travel Destination 3" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4">Your Dream Vacation Starts Here</h1>
+                            <p class="text-lg md:text-xl">Find the perfect package for you</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section id="packages" class="py-16 bg-gray-100 bg-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 text-gray-100">Featured Travel Packages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white bg-gray-700 rounded-lg shadow-md overflow-hidden transition-colors duration-300">
+                    <div class="swiper package-carousel h-64">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 1 Image 1" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 1 Image 2" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 1 Image 3" class="w-full h-full object-cover"></div>
+                        </div>
+                         <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">Tropical Paradise</h3>
+                        <p class="text-gray-600 text-gray-300">Relax on stunning beaches and explore vibrant marine life.</p>
+                    </div>
+                </div>
+                 <div class="bg-white bg-gray-700 rounded-lg shadow-md overflow-hidden transition-colors duration-300">
+                    <div class="swiper package-carousel h-64">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 2 Image 1" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 2 Image 2" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 2 Image 3" class="w-full h-full object-cover"></div>
+                        </div>
+                         <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">Mountain Adventure</h3>
+                        <p class="text-gray-600 text-gray-300">Hike through breathtaking landscapes and enjoy crisp mountain air.</p>
+                    </div>
+                </div>
+                 <div class="bg-white bg-gray-700 rounded-lg shadow-md overflow-hidden transition-colors duration-300">
+                    <div class="swiper package-carousel h-64">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 3 Image 1" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 3 Image 2" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 3 Image 3" class="w-full h-full object-cover"></div>
+                        </div>
+                         <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">European City Break</h3>
+                        <p class="text-gray-600 text-gray-300">Immerse yourself in history and culture in iconic cities.</p>
+                    </div>
+                </div>
+                 <div class="bg-white bg-gray-700 rounded-lg shadow-md overflow-hidden transition-colors duration-300">
+                    <div class="swiper package-carousel h-64">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 4 Image 1" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 4 Image 2" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 4 Image 3" class="w-full h-full object-cover"></div>
+                        </div>
+                         <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">Desert Safari</h3>
+                        <p class="text-gray-600 text-gray-300">Experience the thrill of the desert and stunning sunsets.</p>
+                    </div>
+                </div>
+                 <div class="bg-white bg-gray-700 rounded-lg shadow-md overflow-hidden transition-colors duration-300">
+                    <div class="swiper package-carousel h-64">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 5 Image 1" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 5 Image 2" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 5 Image 3" class="w-full h-full object-cover"></div>
+                        </div>
+                         <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">Northern Lights Chase</h3>
+                        <p class="text-gray-600 text-gray-300">Witness the magical dance of the Aurora Borealis.</p>
+                    </div>
+                </div>
+                 <div class="bg-white bg-gray-700 rounded-lg shadow-md overflow-hidden transition-colors duration-300">
+                    <div class="swiper package-carousel h-64">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 6 Image 1" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 6 Image 2" class="w-full h-full object-cover"></div>
+                            <div class="swiper-slide"><img src="https://via.placeholder.com/600x400" alt="Package 6 Image 3" class="w-full h-full object-cover"></div>
+                        </div>
+                         <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">Historical Journey</h3>
+                        <p class="text-gray-600 text-gray-300">Step back in time and explore ancient wonders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="py-16 bg-gray-200 bg-gray-700 transition-colors duration-300">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800 text-gray-100">Why Choose Us?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="w-12 h-12 text-blue-600 text-blue-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">Unbeatable Value</h3>
+                        <p class="text-gray-700 text-gray-300">We offer competitive pricing without compromising on quality or experience. Get the most out of your travel budget.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="w-12 h-12 text-green-600 text-green-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">Expert Guided Tours</h3>
+                        <p class="text-gray-700 text-gray-300">Explore destinations with knowledgeable local guides who provide unique insights and ensure a rich cultural experience.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="w-12 h-12 text-purple-600 text-purple-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.275a1.99 1.99 0 010 2.828L10.5 17.485a2 2 0 01-2.828 0L3.5 12.536a2 2 0 010-2.828L8.114 4.93a1.99 1.99 0 012.828 0l7.128 7.128z"></path></svg>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">Trusted and Reliable</h3>
+                        <p class="text-gray-700 text-gray-300">Count on us for reliable service and support throughout your journey. Your safety and satisfaction are our top priorities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="py-16 bg-gray-100 bg-gray-900 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 text-gray-100">About Us</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://via.placeholder.com/600x400" alt="About Us Image" class="rounded-lg shadow-md w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <p class="text-lg text-gray-700 text-gray-300 leading-relaxed">
+                        Welcome to TravelPromo, where we are passionate about creating unforgettable travel experiences. Our mission is to connect you with breathtaking destinations and tailor journeys that match your dreams. With years of expertise and a deep love for exploration, our team is dedicated to providing seamless planning and exceptional service. We believe that travel has the power to enrich lives, broaden perspectives, and create lasting memories. Let us help you embark on your next great adventure.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="py-16 bg-gray-200 bg-gray-700 transition-colors duration-300">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-800 text-gray-100">Get in Touch</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">Visit Us</h3>
+                    <p class="text-gray-700 text-gray-300">123 Travel Lane, Adventure City, Globe 56789</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">Call Us</h3>
+                    <p class="text-gray-700 text-gray-300">+1 (123) 456-7890</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800 text-gray-100">Email Us</h3>
+                    <p class="text-gray-700 text-gray-300"><a href="mailto:info@travelpromo.com" class="text-blue-700 text-blue-300 hover:underline">info@travelpromo.com</a></p>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <section id="testimonials" class="py-16 bg-white bg-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 text-gray-100">What Our Customers Say</h2>
+            <div class="swiper testimonial-carousel">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="bg-gray-100 bg-gray-700 p-8 rounded-lg shadow-md text-center transition-colors duration-300">
+                            <p class="text-gray-700 text-gray-300 italic mb-4">"Our trip organized by this company was absolutely amazing! Everything was perfect, from the planning to the execution. Highly recommended!"</p>
+                            <p class="font-semibold text-gray-800 text-gray-100">- Jane Doe</p>
+                            <p class="text-sm text-gray-600 text-gray-400">Frequent Traveler</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-gray-100 bg-gray-700 p-8 rounded-lg shadow-md text-center transition-colors duration-300">
+                            <p class="text-gray-700 text-gray-300 italic mb-4">"I've used their services multiple times and they always exceed my expectations. Great destinations and seamless booking process."</p>
+                            <p class="font-semibold text-gray-800 text-gray-100">- John Smith</p>
+                            <p class="text-sm text-gray-600 text-gray-400">Adventure Enthusiast</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-gray-100 bg-gray-700 p-8 rounded-lg shadow-md text-center transition-colors duration-300">
+                            <p class="text-gray-700 text-gray-300 italic mb-4">"The team was incredibly helpful in planning our family vacation. They tailored everything to our needs and made it a memorable experience."</p>
+                            <p class="font-semibold text-gray-800 text-gray-100">- Sarah Johnson</p>
+                            <p class="text-sm text-gray-600 text-gray-400">Family Traveler</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#141821] text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="mb-8 md:mb-0">
+                <h3 class="text-xl font-semibold mb-4 text-white text-gray-200">Roam and Revel</h3>
+                <p class="text-gray-400 text-gray-500">Your gateway to amazing travel experiences around the globe. We offer curated packages and personalized service.</p>
+            </div>
+
+            <div class="mb-8 md:mb-0">
+                <h3 class="text-xl font-semibold mb-4 text-white text-gray-200">Quick Links</h3>
+                <ul>
+                    <li class="mb-2"><a href="#" class="text-gray-400 text-gray-500 hover:text-white hover:text-gray-300 transition-colors duration-300">Home</a></li>
+                    <li class="mb-2"><a href="#packages" class="text-gray-400 text-gray-500 hover:text-white hover:text-gray-300 transition-colors duration-300">Packages</a></li>
+                     <li class="mb-2"><a href="#about" class="text-gray-400 text-gray-500 hover:text-white hover:text-gray-300 transition-colors duration-300">About Us</a></li>
+                     <li class="mb-2"><a href="#why-us" class="text-gray-400 text-gray-500 hover:text-white hover:text-gray-300 transition-colors duration-300">Why Choose Us?</a></li>
+                    <li class="mb-2"><a href="#contact" class="text-gray-400 text-gray-500 hover:text-white hover:text-gray-300 transition-colors duration-300">Contact</a></li>
+                    <li class="mb-2"><a href="#testimonials" class="text-gray-400 text-gray-500 hover:text-white hover:text-gray-300 transition-colors duration-300">Testimonials</a></li>
+                     <li class="mb-2"><a href="packages.html" class="text-gray-400 text-gray-500 hover:text-white hover:text-gray-300 transition-colors duration-300">All Packages</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-white text-gray-200">Contact Information</h3>
+                <p class="text-gray-400 text-gray-500 mb-2">123 Travel Lane, Adventure City, Globe 56789</p>
+                <p class="text-gray-400 text-gray-500 mb-2">Phone: +1 (123) 456-7890</p>
+                <p class="text-gray-400 text-gray-500 mb-4">Email: <a href="mailto:info@travelpromo.com" class="text-gray-400 text-gray-500 hover:text-white hover:text-gray-300 transition-colors duration-300">info@travelpromo.com</a></p>
+
+                <h3 class="text-xl font-semibold mb-4 text-white text-gray-200">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 text-gray-500 hover:text-white hover:text-gray-300 transition-colors duration-300">Facebook</a>
+                    <a href="#" class="text-gray-400 text-gray-500 hover:text-white hover:text-gray-300 transition-colors duration-300">Twitter</a>
+                    <a href="#" class="text-gray-400 text-gray-500 hover:text-white hover:text-gray-300 transition-colors duration-300">Instagram</a>
+                </div>
+            </div>
+        </div>
+         <div class="container mx-auto px-4 mt-8 text-center text-gray-500 text-gray-600 text-sm">
+            &copy; <span class="copyright-year"></span> Roam and Revel. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const heroSwiper = new Swiper('.hero-carousel', {
+            loop: true,
+            pagination: {
+                el: '.hero-carousel .swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+
+        const packageSwipers = document.querySelectorAll('.package-carousel');
+        packageSwipers.forEach(swiperElement => {
+            new Swiper(swiperElement, {
+                loop: true,
+                pagination: {
+                    el: swiperElement.querySelector('.swiper-pagination'),
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+            });
+        });
+
+         const testimonialSwiper = new Swiper('.testimonial-carousel', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.testimonial-carousel .swiper-pagination',
+                clickable: true,
+            },
+             autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+        });
+
+        // Dark Mode Switcher Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const sunIcon = document.getElementById('theme-toggle-light-icon');
+        const moonIcon = document.getElementById('theme-toggle-dark-icon');
+
+        // Check local storage for theme preference
+        const currentTheme = localStorage.getItem('theme');
+
+        const applyTheme = (theme) => {
+            if (theme === 'dark') {
+                htmlElement.classList.add('dark');
+                htmlElement.classList.remove('light');
+                moonIcon.classList.remove('hidden');
+                sunIcon.classList.add('hidden');
+            } else {
+                 htmlElement.classList.remove('dark');
+                 htmlElement.classList.add('light');
+                 sunIcon.classList.remove('hidden');
+                 moonIcon.classList.add('hidden');
+            }
+        };
+
+        // Apply theme on load
+        if (currentTheme) {
+            applyTheme(currentTheme);
+        } else {
+            // Default to light mode if no preference is set
+            applyTheme('light');
+        }
+
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                applyTheme('light');
+                 localStorage.setItem('theme', 'light');
+            } else {
+                applyTheme('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        document.querySelectorAll('.copyright-year').forEach(function (el) {
+            el.textContent = new Date().getFullYear();
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+
