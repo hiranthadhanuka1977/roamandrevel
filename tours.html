@@ -23,6 +23,7 @@
                 <li><a href="index.html#about">About Us</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
                 <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li class="nav-mobile-only"><a href="tours.html">All Packages</a></li>
             </ul>
         </nav>
         <a href="tours.html" class="header-cta">All Packages</a>
@@ -37,8 +38,13 @@
 
     <section id="all-packages" class="section-pad" style="padding-top: 2rem;">
         <div class="container-narrow">
-            <div class="packages-grid">
-                <article class="package-card">
+            <div class="package-filters" role="group" aria-label="Filter packages">
+                <button type="button" class="filter-pill" data-filter="adventure" aria-pressed="true">Adventure</button>
+                <button type="button" class="filter-pill" data-filter="sightseeing" aria-pressed="false">Sightseeing</button>
+                <button type="button" class="filter-pill" data-filter="all" aria-pressed="false">All</button>
+            </div>
+            <div class="packages-grid" data-filter="adventure">
+                <article class="package-card" data-category="adventure">
                     <div class="card-image">
                         <span class="card-tag">Adventure</span>
                         <span class="card-duration">7 days &amp; 6 Nights</span>
@@ -55,7 +61,7 @@
                         <a href="tour-southbound-adventure.html" class="btn-primary">Read More</a>
                     </div>
                 </article>
-                <article class="package-card">
+                <article class="package-card" data-category="sightseeing">
                     <div class="card-image">
                         <span class="card-tag">Sightseeing</span>
                         <span class="card-duration">7 days &amp; 6 Nights</span>
@@ -72,7 +78,7 @@
                         <a href="tour-southbound-sightseeing.html" class="btn-primary">Read More</a>
                     </div>
                 </article>
-                <article class="package-card">
+                <article class="package-card" data-category="adventure">
                     <div class="card-image">
                         <span class="card-tag">Adventure</span>
                         <span class="card-duration">7 days &amp; 6 Nights</span>
@@ -89,7 +95,7 @@
                         <a href="tour-peakexplorer-adventure.html" class="btn-primary">Read More</a>
                     </div>
                 </article>
-                <article class="package-card">
+                <article class="package-card" data-category="sightseeing">
                     <div class="card-image">
                         <span class="card-tag">Sightseeing</span>
                         <span class="card-duration">7 days &amp; 6 Nights</span>
@@ -106,7 +112,7 @@
                         <a href="tour-peakexplorer-sightseeing.html" class="btn-primary">Read More</a>
                     </div>
                 </article>
-                <article class="package-card">
+                <article class="package-card" data-category="adventure">
                     <div class="card-image">
                         <span class="card-tag">Adventure</span>
                         <span class="card-duration">7 days &amp; 6 Nights</span>
@@ -123,7 +129,7 @@
                         <a href="tour-central-classic-adventure.html" class="btn-primary">Read More</a>
                     </div>
                 </article>
-                <article class="package-card">
+                <article class="package-card" data-category="sightseeing">
                     <div class="card-image">
                         <span class="card-tag">Sightseeing</span>
                         <span class="card-duration">7 days &amp; 6 Nights</span>
@@ -141,6 +147,33 @@
                     </div>
                 </article>
             </div>
+            <script>
+                (function () {
+                    var grid = document.querySelector('#all-packages .packages-grid');
+                    var pills = document.querySelectorAll('.package-filters .filter-pill');
+
+                    function apply(filter) {
+                        grid.setAttribute('data-filter', filter);
+                        pills.forEach(function (p) {
+                            p.setAttribute('aria-pressed', p.dataset.filter === filter ? 'true' : 'false');
+                        });
+                    }
+
+                    var requested = new URLSearchParams(location.search).get('type');
+                    if (Array.prototype.some.call(pills, function (p) { return p.dataset.filter === requested; })) {
+                        apply(requested);
+                    }
+
+                    pills.forEach(function (pill) {
+                        pill.addEventListener('click', function () {
+                            apply(pill.dataset.filter);
+                            var url = new URL(location.href);
+                            url.searchParams.set('type', pill.dataset.filter);
+                            history.replaceState(null, '', url);
+                        });
+                    });
+                })();
+            </script>
         </div>
     </section>
 
@@ -162,7 +195,7 @@
             </div>
             <div>
                 <h3>Contact Information</h3>
-                <p>116, Anderson</p>
+                <p>116, Anderson Road, Kalubowila, Dehiwala</p>
                 <p>Phone: <a href="tel:+94707499887">+94 707 499887</a></p>
                 <p>WhatsApp: <a href="https://wa.me/94707499887">+94 707 499887</a></p>
                 <p>Email: <a href="mailto:info@roamandrevel.lk">info@roamandrevel.lk</a></p>
