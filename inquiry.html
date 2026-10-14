@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Inquiry - TravelPromo</title>
+    <link rel="stylesheet" href="css/travel.css" />
+</head>
+<body class="inner-page">
+
+<header class="site-header" id="header">
+    <div class="header-container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="TravelPromo Logo">
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#featured">Featured</a></li>
+                <li><a href="index.html#why-us">Why Us?</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="nav-mobile-only"><a href="tours.html?type=all">All Packages</a></li>
+            </ul>
+        </nav>
+        <a href="tours.html?type=all" class="header-cta">All Packages</a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="page-banner">
+    <h1>Package Inquiry</h1>
+</div>
+
+<section class="inquiry-section">
+    <div class="container-narrow">
+        <p class="inquiry-intro">Tell us a little about your trip and we will prepare an inquiry for you. Choose a package, or select a customized package if you would like something of your own.</p>
+        <form id="inquiry-form" class="inquiry-form" novalidate>
+            <fieldset class="form-section">
+                <legend><span class="step-num">01</span> Personal information</legend>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="nationality">Nationality</label>
+                        <input type="text" id="nationality" name="nationality" autocomplete="country-name" required>
+                    </div>
+                </div>
+
+                <div class="traveler-groups">
+                    <div class="traveler-group">
+                        <div class="form-field">
+                            <label for="adults">Number of adults</label>
+                            <select id="adults" name="adults" required>
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div id="adult-age-panel" class="age-panel" hidden>
+                            <p class="age-prompt">Enter the age of each adult</p>
+                            <div id="adult-ages" class="age-grid"></div>
+                        </div>
+                    </div>
+                    <div class="traveler-group">
+                        <div class="form-field">
+                            <label for="children">Number of children</label>
+                            <select id="children" name="children" required>
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div id="child-age-panel" class="age-panel" hidden>
+                            <p class="age-prompt">Enter the age of each child</p>
+                            <div id="child-ages" class="age-grid"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="group-label" id="dates-label">Preferred travel dates</p>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="date-from">From</label>
+                        <input type="date" id="date-from" name="date-from" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="date-to">To</label>
+                        <input type="date" id="date-to" name="date-to" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend><span class="step-num">02</span> Travel preferences</legend>
+                <div class="form-field">
+                    <label for="package">Package</label>
+                    <select id="package" name="package" required>
+                        <option value="">Select a package</option>
+                        <option value="southbound-adventure">South Bound Trails, Adventure Package - 7 days &amp; 6 Nights</option>
+                        <option value="southbound-sightseeing">South Bound Trails, Sightseeing Package - 7 days &amp; 6 Nights</option>
+                        <option value="peakexplorer-adventure">Peak Explorer, Adventure Package - 7 days &amp; 6 Nights</option>
+                        <option value="peakexplorer-sightseeing">Peak Explorer, Sightseeing Package - 7 days &amp; 6 Nights</option>
+                        <option value="central-classic-adventure">Central Classic, Adventure Package - 7 days &amp; 6 Nights</option>
+                        <option value="central-classic-sightseeing">Central Classic, Sightseeing Package - 7 days &amp; 6 Nights</option>
+                        <option value="custom">Customized package</option>
+                    </select>
+                </div>
+
+                <div id="custom-fields" class="custom-fields" hidden>
+                    <p class="form-hint">These questions are only for a customized package.</p>
+                    <div class="form-field">
+                        <label for="custom-reason">Reason for a customized package</label>
+                        <textarea id="custom-reason" name="custom-reason" rows="2"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="custom-location">Preferred location</label>
+                            <input type="text" id="custom-location" name="custom-location">
+                        </div>
+                        <div class="form-field">
+                            <label for="custom-budget">Per head budget</label>
+                            <input type="text" id="custom-budget" name="custom-budget">
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="custom-activities">Preferred activities</label>
+                        <textarea id="custom-activities" name="custom-activities" rows="2" placeholder="Adventure, sightseeing, or other"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend><span class="step-num">03</span> Accommodation</legend>
+                <div class="form-field" id="accommodation-field">
+                    <div class="choice-list" role="radiogroup" aria-label="Type of accommodation">
+                        <label class="choice">
+                            <input type="radio" name="accommodation" value="Value package (4 star)" required>
+                            <span><strong>Value</strong><small>4 star</small></span>
+                        </label>
+                        <label class="choice">
+                            <input type="radio" name="accommodation" value="Luxury package (5 star)">
+                            <span><strong>Luxury</strong><small>5 star</small></span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend><span class="step-num">04</span> Special requirements <span class="optional">Optional</span></legend>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="medical">Medical conditions</label>
+                        <input type="text" id="medical" name="medical">
+                    </div>
+                    <div class="form-field">
+                        <label for="occasions">Special occasions</label>
+                        <input type="text" id="occasions" name="occasions">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="allergies">Allergies</label>
+                        <input type="text" id="allergies" name="allergies">
+                    </div>
+                    <div class="form-field">
+                        <label for="dietary">Dietary restrictions</label>
+                        <input type="text" id="dietary" name="dietary">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Submit inquiry</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <div id="inquiry-success" class="inquiry-success" hidden>
+            <h2>Inquiry ready to send</h2>
+            <p>Your email app should open with this inquiry addressed to <a href="mailto:info@roamandrevel.lk">info@roamandrevel.lk</a>. Send that message and we will get back to you.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div>
+            <h3>Roam and Revel</h3>
+            <p>Your gateway to amazing travel experiences around the globe. We offer curated packages and personalized service.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tours.html?type=all">Packages</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#why-us">Why Choose Us?</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact Information</h3>
+            <p>116, Anderson Road, Kalubowila, Dehiwala</p>
+            <p>Phone: <a href="tel:+94707499887">+94 707 499887</a></p>
+            <p>WhatsApp: <a href="https://wa.me/94707499887">+94 707 499887</a></p>
+            <p>Email: <a href="mailto:info@roamandrevel.lk">info@roamandrevel.lk</a></p>
+            <h3 class="mt-6">Follow Us</h3>
+            <div class="footer-social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">&copy; <span class="copyright-year"></span> Roam and Revel. All rights reserved.</div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/inquiry.js"></script>
+</body>
+</html>
